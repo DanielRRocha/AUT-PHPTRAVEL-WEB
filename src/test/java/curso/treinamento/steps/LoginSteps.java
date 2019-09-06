@@ -23,9 +23,6 @@ public class LoginSteps {
 
 	@Quando("Faço login com o usuario {string} e senha {string}")
 	public void faço_login_com_o_usuario_e_senha(String user, String pass) {
-//		(//input[@name='email'])[1]
-//		//input[@name='password']
-		
 		driver.findElement(By.name("email")).sendKeys(user);
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(pass);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -36,4 +33,12 @@ public class LoginSteps {
 		Thread.sleep(3000);
 		Assert.assertTrue(driver.findElement(By.xpath("//strong[text()=' Logout']")).isDisplayed());
 	}
+	
+	@Então("é apresentada a mensagem {string}")
+	public void é_apresentada_a_mensagem(String emailInvalido) throws InterruptedException {
+		Thread.sleep(3000);
+//		Assert.assertTrue(driver.findElement(By.xpath("//p[text()='The Email field must contain a valid email address.']")).isDisplayed());
+		Assert.assertEquals(driver.findElement(By.xpath("//p[text()='The Email field must contain a valid email address.']")).getText(), emailInvalido);
+	}
+	
 }
