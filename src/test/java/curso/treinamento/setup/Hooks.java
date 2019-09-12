@@ -5,27 +5,28 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
-import curso.treinamento.utils.Helper;
+import cucumber.api.java.Before;
 
 public class Hooks {
 
-//	public static WebDriver driver;​ ​
-//
-//	@Before​
-//	public void startTest(Scenario scenario) {​
-//		System.setProperty("webdriver.chrome.driver", "src/test/resources/mac/chromedriver");​
-//	driver = new ChromeDriver();​
-//		driver.get("http://newtours.demoaut.com/");​
-//	}​ ​
-//
-//	@After​
-//	public void tearDown(Scenario scenario) {​
-//		Helper.screenshot(scenario);​
-//		driver.close();​
-//	}​ ​
-//
-//	public static WebDriver getDriver() { ​
-//	return driver;​
-//	}​
-}
+	public static WebDriver driver;
 
+	@Before
+	public void startTest(Scenario scenario) {
+
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/mac/chromedriver");
+		driver = new ChromeDriver();
+
+		driver.get("https://www.phptravels.net/admin");
+	}
+
+	@After
+	public void tearDown(Scenario scenario) {
+		driver.close();
+	}
+
+	public static WebDriver getDriver() {
+		return driver;
+	}
+
+}
