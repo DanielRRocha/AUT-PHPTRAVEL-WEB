@@ -1,10 +1,5 @@
 package curso.treinamento.steps;
 
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
@@ -16,10 +11,8 @@ public class LoginSteps {
 	private LoginPage loginPage = new LoginPage(Hooks.getDriver());
 	
 		@Dado("Que eu esteja na tela de login")
-		public void que_eu_deseje_logar_no_sistema() {
-			
-			
-			//Fazer validação
+		public void que_eu_deseje_logar_no_sistema() throws InterruptedException {
+			loginPage.validar_tela_login();
 			
 		}
 	
@@ -32,12 +25,12 @@ public class LoginSteps {
 	
 		@Então("Sou autenticado com sucesso")
 		public void sou_autenticado_com_sucesso() throws InterruptedException {
-
+			loginPage.validar_home();
 		}
 		
 		@Então("é apresentada a mensagem {string}")
 		public void e_apresentada_a_mensagem(String emailInvalido) throws InterruptedException {
-
+			loginPage.validar_login_invalido(emailInvalido);
 		}
 	
 }
