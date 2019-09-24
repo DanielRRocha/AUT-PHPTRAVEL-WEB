@@ -43,8 +43,19 @@ public class LoginPage {
 		botaoLogin.click();
 	}
 
-	public void validar_login_invalido(String emailInvalido) throws InterruptedException {
-		Assert.assertEquals(emailInvalido, txtEmailinvalido.getText());
+//	public void validar_login_invalido(String emailInvalido) throws InterruptedException {
+//		Helper.aguardar_elemento(10, txtEmailinvalido);
+//		Assert.assertEquals(emailInvalido, txtEmailinvalido.getText());
+//	}
+	
+	public Boolean validar_login_invalido(String emailInvalido) throws InterruptedException {
+		Helper.aguardar_elemento(10, txtEmailinvalido);
+		String emailInvalido1 = txtEmailinvalido.getText();
+		if(emailInvalido1.equals(emailInvalido)) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 }
