@@ -13,6 +13,9 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 
+	@FindBy(xpath = "//span[text()='Remove Frame']")
+	private WebElement linkRemoveFrame;
+	
 	@FindBy(name = "email")
 	private WebElement campoEmail;
 
@@ -25,9 +28,15 @@ public class LoginPage {
 	@FindBy(xpath = "//div[@class='alert alert-danger loading wow fadeIn animated animated']")
 	private WebElement txtEmailinvalido;
 
+	public void clicar_remove_frame() {
+		if(Helper.elemento_existe(linkRemoveFrame, 30)) {
+			linkRemoveFrame.click();
+		}
+	}
+	
 	public Boolean validar_tela_login() {
-		Helper.aguardar_elemento(10, botaoLogin);
-		return botaoLogin.isDisplayed();
+		
+		return Helper.elemento_existe(botaoLogin, 30);
 	}
 
 	public void preencher_email(String email) {

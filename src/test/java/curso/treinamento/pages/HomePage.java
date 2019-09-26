@@ -13,11 +13,11 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//strong[text()=' Logout']")
+	@FindBy(xpath = "//strong[contains(text(), 'Logout')]")
 	private WebElement linkLogout;
 	
 	public Boolean validar_pagina() {
-		Helper.aguardar_elemento(10, linkLogout);
+		Helper.aguardar_elemento(30, linkLogout);
 		return linkLogout.isDisplayed();
 	}
 }
