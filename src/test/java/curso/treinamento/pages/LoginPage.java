@@ -44,7 +44,7 @@ public class LoginPage {
 
 	public Boolean validar_login_invalido(String emailInvalido) throws InterruptedException {
 		Helper.aguardar_elemento(10, txtEmailinvalido);
-		return emailInvalido.contentEquals(txtEmailinvalido.getText());
+		return emailInvalido.equals(txtEmailinvalido.getText());
 	}
 	
 //	public Boolean validar_login_invalido(String emailInvalido) throws InterruptedException {
