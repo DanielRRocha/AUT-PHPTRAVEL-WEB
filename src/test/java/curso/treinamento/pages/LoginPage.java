@@ -1,6 +1,5 @@
 package curso.treinamento.pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,19 +42,19 @@ public class LoginPage {
 		botaoLogin.click();
 	}
 
-//	public void validar_login_invalido(String emailInvalido) throws InterruptedException {
-//		Helper.aguardar_elemento(10, txtEmailinvalido);
-//		Assert.assertEquals(emailInvalido, txtEmailinvalido.getText());
-//	}
-	
 	public Boolean validar_login_invalido(String emailInvalido) throws InterruptedException {
 		Helper.aguardar_elemento(10, txtEmailinvalido);
-		String emailInvalido1 = txtEmailinvalido.getText();
-		if(emailInvalido1.equals(emailInvalido)) {
-			return true;
-		}else {
-			return false;
-		}
+		return emailInvalido.contentEquals(txtEmailinvalido.getText());
 	}
+	
+//	public Boolean validar_login_invalido(String emailInvalido) throws InterruptedException {
+//		Helper.aguardar_elemento(10, txtEmailinvalido);
+//		String emailInvalido1 = txtEmailinvalido.getText();
+//		if(emailInvalido1.equals(emailInvalido)) {
+//			return true;
+//		}else {
+//			return false;
+//		}
+//	}
 
 }

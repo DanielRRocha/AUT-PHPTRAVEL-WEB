@@ -36,7 +36,6 @@ public class LoginSteps {
 
 	@Então("é apresentada a mensagem {string}")
 	public void e_apresentada_a_mensagem(String emailInvalido) throws InterruptedException {
-		//loginPage.validar_login_invalido(emailInvalido);
 		Assert.assertTrue("Mensagem Email Invalido não apresentada ou incorreta", loginPage.validar_login_invalido(emailInvalido));
 	}
 
