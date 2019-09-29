@@ -29,7 +29,7 @@ public class LoginPage {
 	private WebElement txtEmailinvalido;
 
 	public void clicar_remove_frame() {
-		if(Helper.elemento_existe(linkRemoveFrame, 30)) {
+		if(Helper.elemento_existe(linkRemoveFrame, 10)) {
 			linkRemoveFrame.click();
 		}
 	}

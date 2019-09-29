@@ -9,5 +9,11 @@ Funcionalidade: Visualização de Menu
 	@Menu
 	Cenário: Itens apresentados no menu Cars
 		Dado que eu esteja na tela Home
-		Quando acesso o menu Cars
-		Então são apresentados os itens "Cars", "Extras" e "Cars Settings"
+		Quando acesso o menu "Cars"
+		Então são apresentados os itens "Cars", "Extras" e "Cars Settings" do menu "Cars"
+		
+	@Menu
+	Cenário: Itens apresentados no menu Accounts
+		Dado que eu esteja na tela Home
+		Quando acesso o menu "ACCOUNTS"
+		Então são apresentados os itens "Admins", "Suppliers", "Customers" e "GuestCustomers" do menu "ACCOUNTS"

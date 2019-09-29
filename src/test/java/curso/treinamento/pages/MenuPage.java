@@ -14,18 +14,15 @@ public class MenuPage {
 	public MenuPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-
-	@FindBy(xpath = "//a[@href='#Cars']")
-	private WebElement menuCars;
 	
 	
-	public void clicar_menu_cars() {
-		menuCars.click();
+	public void clicar_menu(String menu) {
+		(Hooks.getDriver().findElement(By.xpath("//a[@href='#"+menu+"']"))).click();
 	}
 	
-	public boolean validar_menu_cars(String subMenu) {
+public boolean validar_menu(String menu, String subMenu) {
 		
-		return Helper.elemento_existe(Hooks.getDriver().findElement(By.xpath("//a[@href='#Cars']/following::a[text()='"+subMenu+"']")), 10);
+		return Helper.elemento_existe(Hooks.getDriver().findElement(By.xpath("//a[@href='#"+menu+"']/following::a[text()='"+subMenu+"']")), 10);
 	}
 
 }
