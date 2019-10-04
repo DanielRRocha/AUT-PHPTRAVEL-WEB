@@ -18,7 +18,7 @@ public class Hooks {
 	@Before
 	public void startTest(Scenario scenario) {
 
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/linux/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/mac/chromedriver");
 		driver = new ChromeDriver();
 
 //		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
