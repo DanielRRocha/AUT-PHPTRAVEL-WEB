@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 		features	=	{"src/test/resources/features"},
 		glue		=	{"curso.treinamento.steps", "curso.treinamento.setup"},
 		snippets	=	SnippetType.UNDERSCORE,
-		tags		=	{"@CadastrarAdministrador"})
+		tags		=	{"@LoginComSucesso"})
 
 
 
